@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm("Login", "Home", FormMethod.Post))
+{
+    <label for="inputEmail">Username:</label>
+    @Html.TextBox("User Name")
+    <br />
+    <label for="inputPassword">Password:</label>
+    @Html.Password("Password")
+    <br />
+    <button type="submit">Login</button>
+}
+<br />
+<h4>New Customer?</h4>
+<p>     Call 1-800-967-5352 to connect with a representative</p>
