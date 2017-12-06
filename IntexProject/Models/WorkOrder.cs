@@ -20,7 +20,7 @@ namespace IntexProject.Models
         [DisplayName("Number of Samples")]
         public int? numberSamples { get; set; }
 
-        [DisplayName("Description of appearance")]
+        [DisplayName("Description of Appearance")]
         public String apperance { get; set; }
 
         //[DisplayName("Total weight of samples")]
@@ -28,7 +28,7 @@ namespace IntexProject.Models
 
 
         [RegularExpression(@"\d{1, 2}\/\d{1,2}\/\d{4}$", ErrorMessage = "Please follow the date format")]
-        [DisplayName("Due date of compound")]
+        [DisplayName("Due Date of Compound")]
         public String dateDue { get; set; }
 
 
