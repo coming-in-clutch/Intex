@@ -37,11 +37,6 @@
                     {   
                         
                         <li>@Html.ActionLink("Employee", "Employee", "Home")</li>
-                        <ul>
-                            <!--Dropdown-->
-                                <!--Add Customer to Database-->
-                            <li>@Html.ActionLink("Add Customer", "NewCustomer", "Home")</li>
-                        </ul>
                         <li>@Html.ActionLink("Logout", "Logout", "Home")</li>
                             }
                             else if (Session["userName"].ToString() == "Bird Enterprise")
