@@ -45,16 +45,12 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Submit" class="btn btn-primary" />
+                @Html.ActionLink("Submit", "Confirmation", "Home", new { @class = "btn btn-primary btn-large" })
                 @Html.ActionLink("Cancel", "Index", "Home", new { @class = "btn btn-default btn-large" })
             </div>
         </div>
     </div>
 }
-
-<div>
-    @Html.ActionLink("Back to Catalog", "Catalog")
-</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
