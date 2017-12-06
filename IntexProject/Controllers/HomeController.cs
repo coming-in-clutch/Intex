@@ -45,14 +45,14 @@ namespace IntexProject.Controllers
             if (string.Equals(userName, "customer") && (string.Equals(password, "intex")))
             {
                 FormsAuthentication.SetAuthCookie(userName, rememberMe);
-
+                Session["userName"] = "admin";
                 return RedirectToAction("Index", "Home");
 
             }
             else if (string.Equals(userName, "employee") && (string.Equals(password, "intex")))
             {
                 FormsAuthentication.SetAuthCookie(userName, rememberMe);
-
+                Session["userName"] = "user";
                 return RedirectToAction("Index", "Home");
 
             }
@@ -61,6 +61,19 @@ namespace IntexProject.Controllers
                 return View();
             }
         }
+
+        public ActionResult Logout()
+        {
+            
+            return View();
+        }
+
+        public ActionResult LogoutConfirmed()
+        {
+            Session.Abandon();
+            return RedirectToAction("Login", "Home");
+        }
+
 
         [Authorize]
         public ActionResult Catalog()
