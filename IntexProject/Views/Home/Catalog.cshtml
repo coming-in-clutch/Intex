@@ -12,11 +12,8 @@
 
 <table class="table">
     <tr>
-        @*<th>
-            @Html.DisplayNameFor(model => model.assayID)
-        </th>*@
         <th>
-            @Html.DisplayNameFor(model => model.assayID)
+            @Html.DisplayNameFor(model => model.assayName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.testID)
@@ -24,9 +21,7 @@
         <th>
             @Html.DisplayNameFor(model => model.testName)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.materialID)
-        </th>
+
         <th>
             @Html.DisplayNameFor(model => model.materialName)
         </th>
@@ -47,9 +42,9 @@
         <td>
             @Html.DisplayFor(modelItem => item.testName)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.materialID)
-        </td>
+        </td>*@
         <td>
             @Html.DisplayFor(modelItem => item.materialName)
         </td>

@@ -201,6 +201,7 @@
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\Manager.cshtml" />
     <Content Include="Views\Home\Employee.cshtml" />
+    <Content Include="Views\Home\WorkOrder.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
