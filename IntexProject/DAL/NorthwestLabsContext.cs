@@ -20,6 +20,8 @@ namespace IntexProject.DAL
         public System.Data.Entity.DbSet<IntexProject.Models.WorkOrder> WorkOrders { get; set; }
 
         public System.Data.Entity.DbSet<IntexProject.Models.Orders> Orders { get; set; }
+
+        public System.Data.Entity.DbSet<IntexProject.Models.NewCustomer> NewCustomers { get; set; }
     }
 
 }
