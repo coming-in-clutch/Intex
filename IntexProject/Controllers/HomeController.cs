@@ -211,6 +211,7 @@ namespace IntexProject.Controllers
             return View(newcustomer);
         }
 
+        [Authorize]
         public ActionResult EmployeeWorkOrder()
         {
             return View();
