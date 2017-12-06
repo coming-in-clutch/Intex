@@ -1,19 +1,40 @@
 ﻿@{
-    ViewBag.Title = "Contact";
+    ViewBag.Title = "Contact Us";
 }
-
-<ol class="breadcrumb">
-    <li class="breadcrumb-item">@Html.ActionLink("Home", "Index")</li>
-    <li class="breadcrumb-item active">Contact</li>
-</ol>
-<h2>@ViewBag.Title.</h2>
+<h2>@ViewBag.Title</h2>
 <h3>@ViewBag.Message</h3>
 
+@* The contact view will have basic company information, such as phone number and email. The view will also have a contact form that will have
+    fields for the user’s name, email, subject(choose from a list), and message body. There will need to be a submit button at the bottom of the
+    contact form. This button however, won’t do anything with the data yet. For now it will just clear the text in the form. *@
 <address>
-    555 Intex Road<br />
-    Seattle, WA 98101<br />
-    <b><abbr title="Phone">Phone:</abbr></b>
-    1-800-967-5352
+    6649 S 216th St<br />
+    Seattle, WA 98032<br />
+    <abbr title="Phone">Phone:</abbr>
+    +1 800.422.4000
 </address>
-
-@*make the form here with the model*@
+<form>
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" id="name" placeholder="First and Last Name" />
+    </div>
+    <div class="form-group">
+        <label for="email">E-mail Address:</label>
+        <input type="email" class="form-control" id="email" placeholder="name@example.com">
+    </div>
+    <div class="form-group">
+        <label for="subject">Subject:</label>
+        <select class="form-control" id="subject">
+            <option>About Us</option>
+            <option>Services</option>
+            <option>Scheduling</option>
+            <option>Pricing</option>
+            <option>Other</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="message">Notes here:</label>
+        <textarea class="form-control" id="message" placeholder="Leave any notes here"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
