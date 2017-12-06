@@ -1,14 +1,19 @@
-﻿using System;
+﻿using IntexProject.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using IntexProject.Models;
 
 namespace IntexProject.Controllers
 {
     public class HomeController : Controller
     {
+        private NorthwestLabsContext db = new NorthwestLabsContext();
+
+
         public ActionResult Index()
         {
             return View();
@@ -16,15 +21,11 @@ namespace IntexProject.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
 
@@ -45,15 +46,22 @@ namespace IntexProject.Controllers
             if (string.Equals(userName, "customer") && (string.Equals(password, "intex")))
             {
                 FormsAuthentication.SetAuthCookie(userName, rememberMe);
-                Session["userName"] = "admin";
-                return RedirectToAction("Index", "Home");
+
+                return RedirectToAction("Catalog", "Home");
 
             }
             else if (string.Equals(userName, "employee") && (string.Equals(password, "intex")))
             {
                 FormsAuthentication.SetAuthCookie(userName, rememberMe);
-                Session["userName"] = "user";
+
                 return RedirectToAction("Index", "Home");
+
+            }
+            else if (string.Equals(userName, "manager") && (string.Equals(password, "intex")))
+            {
+                FormsAuthentication.SetAuthCookie(userName, rememberMe);
+
+                return RedirectToAction("Manager", "Home");
 
             }
             else
@@ -62,21 +70,41 @@ namespace IntexProject.Controllers
             }
         }
 
-        public ActionResult Logout()
+        //public void LoginLink_OnClick(object sender, EventArgs args)
+        //{
+        //    FormsAuthentication.SignOut();
+        //    FormsAuthentication.RedirectToLoginPage();
+        //}
+
+        //[Authorize]
+        public ActionResult Catalog()
         {
-            
+
+            IEnumerable<Catalog> catalog = db.Database.SqlQuery<Catalog>("SELECT  Assay.assayID," +
+                "assayName," +
+                "Test.testID," +
+                "test.testName," +
+                "material.materialID," +
+                "material.materialName" +
+                "FROM Assay" +
+                "    LEFT JOIN Assay_Test ON" +
+                "        Assay_Test.assayID = Assay.assayID" +
+                "    INNER JOIN Test ON" +
+                "        Test.testID = Assay_Test.testID" +
+                "    INNER JOIN Material_Test MT ON" +
+                "        MT.testID = Test.testID" +
+                "    INNER JOIN Material ON" +
+                "        Material.materialID = MT.materialID" +
+                "ORDER BY ASSAY.assayID, assayName");
             return View();
         }
 
-        public ActionResult LogoutConfirmed()
+        public ActionResult WorkOrder()
         {
-            Session.Abandon();
-            return RedirectToAction("Login", "Home");
+            return View();
         }
 
-
-        [Authorize]
-        public ActionResult Catalog()
+        public ActionResult Manager()
         {
             return View();
         }

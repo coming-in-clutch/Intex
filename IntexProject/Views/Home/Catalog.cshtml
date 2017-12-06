@@ -1,15 +1,54 @@
-﻿
+﻿@model IEnumerable<IntexProject.Models.Catalog>
 
 @{
     ViewBag.Title = "Catalog";
 }
 
-<ol class="breadcrumb">
+
+@*<ol class="breadcrumb">
     <li class="breadcrumb-item">@Html.ActionLink("Home", "Index")</li>
     <li class="breadcrumb-item active">Catalog</li>
-</ol>
+</ol>*@
 
-<h2>Catalog</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.assayName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.testID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.testName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.materialID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.materialName)
+        </th>
+        <th></th>
+    </tr>
 
-<h3>Here is where the Assay List will go</h3>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.assayName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.testID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.testName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.materialID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.materialName)
+        </td>
 
+    </tr>
+}
+
+</table>
