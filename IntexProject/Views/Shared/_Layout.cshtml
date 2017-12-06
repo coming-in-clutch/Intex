@@ -28,18 +28,19 @@
                         <li>@Html.ActionLink("Login", "Login", "Home")</li>
 
                     }
-                    else if (Session["userName"].ToString() == "admin")
+                    else if (Session["userName"].ToString() == "Manager")
                     {
                         <li>@Html.ActionLink("Manager", "Manager", "Home")</li>
                         <li>@Html.ActionLink("Logout", "Logout", "Home")</li>
                     }
-                    else if (Session["userName"].ToString() == "employee")
+                    else if (Session["userName"].ToString() == "Employee")
                     {
                         <li>@Html.ActionLink("Employee", "Employee", "Home")</li>
                         <li>@Html.ActionLink("Logout", "Logout", "Home")</li>
                     }
-                    else
+                    else if (Session["userName"].ToString() == "Customer")
                     {
+                        <li>@Html.ActionLink("Orders", "Orders", "Home")</li>
                         <li>@Html.ActionLink("Logout", "Logout", "Home")</li>
                     }
                 </ul>
