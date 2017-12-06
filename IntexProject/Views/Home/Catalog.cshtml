@@ -5,60 +5,55 @@
 }
 
 
-@*<ol class="breadcrumb">
+<ol class="breadcrumb">
     <li class="breadcrumb-item">@Html.ActionLink("Home", "Index")</li>
     <li class="breadcrumb-item active">Catalog</li>
-</ol>*@
+</ol>
+
+<h2>Catalog</h2>
 
 <br />
 <br />
 @Html.ActionLink("New Work Order", "WorkOrder", "Home", new { @class = "btn btn-primary btn-sm" })
 
+
 <br />
 <br />
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.assayName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.testID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.testName)
-        </th>
+    <div class="panel-group">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" href="#collapse1">Assay 1: Protein Analysis </a>
+                </h4>
+            </div>
+            <div id="collapse1" class="panel-collapse collapse">
+                                <ul class="list-group">
+                                    <li class="list-group-item">Biochemical Pharmacology (BP)</li>
+                                    <li class="list-group-item">DiscoveryScreen® (DS)</li>
+                                    <li class="list-group-item">ProfilingScreen® (PF)</li>
+                                </ul>
 
-        <th>
-            @Html.DisplayNameFor(model => model.materialName)
-        </th>
-        <th></th>
-    </tr>
+           </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" href="#collapse2">Assay 2: Potency Analysis </a>
+                    </h4>
+                </div>
+                <div id="collapse2" class="panel-collapse collapse">
+                    <ul class="list-group">
+                        <li class="list-group-item">Biochemical Pharmacology (BP)</li>
+                        <li class="list-group-item">DiscoveryScreen® (DS)</li>
+                        <li class="list-group-item">ImmunoScreen® (IS)</li>
+                        <li class="list-group-item">ProfilingScreen® (PF)</li>
+                    </ul>
 
-@foreach (var item in Model) {
-    <tr>
-        @*<td>
-            @Html.DisplayFor(modelItem => item.assayID)
-        </td>*@
-        <td>
-            @Html.DisplayFor(modelItem => item.assayName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.testID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.testName)
-        </td>
-        @*<td>
-            @Html.DisplayFor(modelItem => item.materialID)
-        </td>*@
-        <td>
-            @Html.DisplayFor(modelItem => item.materialName)
-        </td>
+                </div>
 
-    </tr>
-}
+            </div>
+            </div>
+    </div>
 
-</table>
 
 

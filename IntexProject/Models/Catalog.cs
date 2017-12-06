@@ -11,25 +11,18 @@ namespace IntexProject.Models
     public class Catalog
     {
         [Key]
-        [DisplayName("Assay ID")]
+        [DisplayName("Assay")]
         public int assayID { get; set; }
 
         [DisplayName("Assay Name")]
         public String assayName { get; set; }
 
-        [DisplayName("TestID")]
-        public int testID { get; set; }
 
-        [DisplayName("Test Name")]
-        public String testName { get; set; }
+        [DisplayName("Number of Tests")]
+        public int TestNum { get; set; }
 
-        [HiddenInput(DisplayValue = false)]
-        public int materialID { get; set; }
-
-        [DisplayName("Material Name")]
-        public String materialName { get; set; }
-
-
+        //[DisplayName("Test Name")]
+        //public String testName { get; set; }
 
 
     }

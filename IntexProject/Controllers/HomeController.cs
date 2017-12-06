@@ -98,17 +98,36 @@ namespace IntexProject.Controllers
 
             IEnumerable<Catalog> catalog = db.Database.SqlQuery<Catalog>("SELECT  Assay.assayID," +
                 "assayName, " +
-                "Test.testID, " +
-                "test.testName, " +
-                "material.materialID, " +
-                "material.materialName " +
+                "test.testName " +
                 "FROM Assay " +
-                "   LEFT JOIN Assay_Test ON Assay_Test.assayID = Assay.assayID " +
+                "   INNER JOIN Assay_Test ON Assay_Test.assayID = Assay.assayID " +
                 "   INNER JOIN Test ON Test.testID = Assay_Test.testID " +
-                "   INNER JOIN Material_Test MT ON MT.testID = Test.testID " +
-                "   INNER JOIN Material ON Material.materialID = MT.materialID " +
+                "WHERE Assay.assayID = 1 " +
                 "ORDER BY ASSAY.assayID, assayName ");
             return View(catalog);
+        }
+
+        public ActionResult CatalogDescription()
+        {
+
+            //IEnumerable<Catalog> catalog = db.Database.SqlQuery<Catalog>("SELECT  Assay.assayID," +
+            //    "assayName, " +
+            //    "test.testName " +
+            //    "FROM Assay " +
+            //    "   INNER JOIN Assay_Test ON Assay_Test.assayID = Assay.assayID " +
+            //    "   INNER JOIN Test ON Test.testID = Assay_Test.testID " +
+            //    "WHERE Assay.assayID = 1 " +
+            //    "ORDER BY ASSAY.assayID, assayName ");
+            //return View(catalog);
+            IEnumerable<Catalog> fullCatalog = db.Database.SqlQuery<Catalog>("SELECT  Assay.assayID," +
+                "assayName, " +
+                "Count(test.testName) AS 'TestNum'" +
+                "FROM Assay " +
+                "   INNER JOIN Assay_Test ON Assay_Test.assayID = Assay.assayID " +
+                "   INNER JOIN Test ON Test.testID = Assay_Test.testID " +
+                "GROUP BY Assay.assayID, assayName " +
+                "ORDER BY ASSAY.assayID, assayName ");
+            return View(fullCatalog);
         }
 
         [HttpGet]
