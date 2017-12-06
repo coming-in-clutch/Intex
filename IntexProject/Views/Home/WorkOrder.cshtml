@@ -1,0 +1,56 @@
+﻿@model IEnumerable<IntexProject.Models.WorkOrder>
+
+@{
+    ViewBag.Title = "WorkOrder";
+}
+
+<h2>WorkOrder</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.assayID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.assayID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.numberSamples)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.apperance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.weight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dateDue)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.assayID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.assayID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.numberSamples)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.apperance)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.weight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dateDue)
+        </td>
+    </tr>
+}
+
+</table>
