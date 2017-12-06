@@ -46,7 +46,7 @@ namespace IntexProject.Controllers
             if (string.Equals(userName, "customer") && (string.Equals(password, "intex")))
             {
                 FormsAuthentication.SetAuthCookie(userName, rememberMe);
-                Session["userName"] = "customer";
+                Session["userName"] = "Customer";
 
                 return RedirectToAction("Catalog", "Home");
 
@@ -54,7 +54,7 @@ namespace IntexProject.Controllers
             else if (string.Equals(userName, "employee") && (string.Equals(password, "intex")))
             {
                 FormsAuthentication.SetAuthCookie(userName, rememberMe);
-                Session["userName"] = "employee";
+                Session["userName"] = "Employee";
 
                 return RedirectToAction("Index", "Home");
 
@@ -62,7 +62,7 @@ namespace IntexProject.Controllers
             else if (string.Equals(userName, "manager") && (string.Equals(password, "intex")))
             {
                 FormsAuthentication.SetAuthCookie(userName, rememberMe);
-                Session["userName"] = "admin";
+                Session["userName"] = "Manager";
                 return RedirectToAction("Manager", "Home");
 
             }

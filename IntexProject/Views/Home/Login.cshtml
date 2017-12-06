@@ -1,9 +1,7 @@
 ﻿@{
     ViewBag.Title = "Login";
     if (Session["userName"] == null)
-    {
-
-    }
+    {}
     else
     {
         Response.Redirect("~/Home/Logout");
