@@ -23,8 +23,8 @@ namespace IntexProject.Models
         [DisplayName("Description of appearance")]
         public String apperance { get; set; }
 
-        [DisplayName("Total weight of samples")]
-        public String weight(mg) { get; set; }
+        //[DisplayName("Total weight of samples")]
+        //public String weight(mg) { get; set; }
 
         [DisplayName("Due date of compound")]
         public String dateDue { get; set; }

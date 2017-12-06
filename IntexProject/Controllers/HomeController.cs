@@ -96,22 +96,18 @@ namespace IntexProject.Controllers
         {
 
             IEnumerable<Catalog> catalog = db.Database.SqlQuery<Catalog>("SELECT  Assay.assayID," +
-                "assayName," +
-                "Test.testID," +
-                "test.testName," +
-                "material.materialID," +
-                "material.materialName" +
-                "FROM Assay" +
-                "    LEFT JOIN Assay_Test ON" +
-                "        Assay_Test.assayID = Assay.assayID" +
-                "    INNER JOIN Test ON" +
-                "        Test.testID = Assay_Test.testID" +
-                "    INNER JOIN Material_Test MT ON" +
-                "        MT.testID = Test.testID" +
-                "    INNER JOIN Material ON" +
-                "        Material.materialID = MT.materialID" +
-                "ORDER BY ASSAY.assayID, assayName");
-            return View();
+                "assayName, " +
+                "Test.testID, " +
+                "test.testName, " +
+                "material.materialID, " +
+                "material.materialName " +
+                "FROM Assay " +
+                "   LEFT JOIN Assay_Test ON Assay_Test.assayID = Assay.assayID " +
+                "   INNER JOIN Test ON Test.testID = Assay_Test.testID " +
+                "   INNER JOIN Material_Test MT ON MT.testID = Test.testID " +
+                "   INNER JOIN Material ON Material.materialID = MT.materialID " +
+                "ORDER BY ASSAY.assayID, assayName ");
+            return View(catalog);
         }
 
         public ActionResult WorkOrder()
