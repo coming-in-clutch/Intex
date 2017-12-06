@@ -160,8 +160,9 @@ namespace IntexProject.Controllers
                 "numberSamples, " +
                 "dateArrived, " +
                 "dateDue, " +
-                "apperance " +
-                "FROM Work_Order; ");
+                "statusDescription " +
+                "FROM Work_Order AS WO INNER JOIN Status ON WO.statusID = Status.statusID " +
+                "WHERE customerID = 1 ");
             return View(orders);
         }
 

@@ -21,7 +21,7 @@
             @Html.DisplayNameFor(model => model.dateDue)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.apperance)
+            @Html.DisplayNameFor(model => model.statusDescription)
         </th>
         <th></th>
     </tr>
@@ -38,13 +38,13 @@
             @Html.DisplayFor(modelItem => item.dateDue)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.apperance)
+            @Html.DisplayFor(modelItem => item.statusDescription)
         </td>
-        <td>
+        @*<td>
             @Html.ActionLink("Edit", "Edit", new { id=item.workOrderID }) |
             @Html.ActionLink("Details", "Details", new { id=item.workOrderID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.workOrderID })
-        </td>
+        </td>*@
     </tr>
 }
 

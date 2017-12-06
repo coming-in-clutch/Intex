@@ -19,9 +19,6 @@ namespace IntexProject.Models
         [DisplayName("Date Due")]
         public DateTime dateDue{ get; set; }
 
-        [HiddenInput(DisplayValue = false)]
-        public String statusID { get; set; }
-
         [DisplayName("Status")]
         public String statusDescription { get; set; }
 
