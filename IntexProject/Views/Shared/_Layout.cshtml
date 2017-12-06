@@ -23,7 +23,25 @@
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li>@Html.ActionLink("Catalog", "Catalog", "Home")</li>
-                    <li>@Html.ActionLink("Login", "Login", "Home")</li>
+                    @if (Session["userName"] == null)
+                    {
+                        <li>@Html.ActionLink("Login", "Login", "Home")</li>
+
+                    }
+                    else if (Session["userName"].ToString() == "admin")
+                    {
+                        <li>@Html.ActionLink("Manager", "Manager", "Home")</li>
+                        <li>@Html.ActionLink("Logout", "Logout", "Home")</li>
+                    }
+                    else if (Session["userName"].ToString() == "employee")
+                    {
+                        <li>@Html.ActionLink("Employee", "Employee", "Home")</li>
+                        <li>@Html.ActionLink("Logout", "Logout", "Home")</li>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Logout", "Logout", "Home")</li>
+                    }
                 </ul>
             </div>
         </div>

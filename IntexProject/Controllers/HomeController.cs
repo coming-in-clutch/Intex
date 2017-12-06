@@ -46,6 +46,7 @@ namespace IntexProject.Controllers
             if (string.Equals(userName, "customer") && (string.Equals(password, "intex")))
             {
                 FormsAuthentication.SetAuthCookie(userName, rememberMe);
+                Session["userName"] = "customer";
 
                 return RedirectToAction("Catalog", "Home");
 
@@ -53,6 +54,7 @@ namespace IntexProject.Controllers
             else if (string.Equals(userName, "employee") && (string.Equals(password, "intex")))
             {
                 FormsAuthentication.SetAuthCookie(userName, rememberMe);
+                Session["userName"] = "employee";
 
                 return RedirectToAction("Index", "Home");
 
@@ -60,7 +62,7 @@ namespace IntexProject.Controllers
             else if (string.Equals(userName, "manager") && (string.Equals(password, "intex")))
             {
                 FormsAuthentication.SetAuthCookie(userName, rememberMe);
-
+                Session["userName"] = "admin";
                 return RedirectToAction("Manager", "Home");
 
             }
@@ -68,6 +70,19 @@ namespace IntexProject.Controllers
             {
                 return View();
             }
+        }
+
+        public ActionResult Logout()
+        {
+
+            return View();
+        }
+
+        public ActionResult LogoutConfirmed()
+        {
+            Session.Abandon();
+            return RedirectToAction("Login", "Home");
+
         }
 
         //public void LoginLink_OnClick(object sender, EventArgs args)
@@ -104,7 +119,14 @@ namespace IntexProject.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult Manager()
+        {
+            return View();
+        }
+
+        [Authorize]
+        public ActionResult Employee()
         {
             return View();
         }
