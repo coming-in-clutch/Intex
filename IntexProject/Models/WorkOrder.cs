@@ -26,8 +26,9 @@ namespace IntexProject.Models
         //[DisplayName("Total weight of samples")]
         //public String weight(mg) { get; set; }
 
+
+        [RegularExpression(@"\d{1, 2}\/\d{1,2}\/\d{4}$", ErrorMessage = "Please follow the date format")]
         [DisplayName("Due date of compound")]
-        //[RegularExpression("^\d{1,2}\/\d{1,2}\/\d{4}$", ErrorMessage = "Please follow the date format")]
         public String dateDue { get; set; }
 
 
