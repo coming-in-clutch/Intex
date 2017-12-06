@@ -1,0 +1,76 @@
+﻿
+@{
+    ViewBag.Title = "Employee Work Order";
+}
+
+<h2>Employee Work Order</h2>
+
+<form>
+
+    <div class="form-group">
+        <label for="customerID">CustomerID: </label>
+        <input type="text" class="form-control" placeholder="This will automatically fill from barcode" disabled />
+    </div>
+    <div class="form-group">
+        <label for="customerID">Customer Name: </label>
+        <input type="text" class="form-control" placeholder="This will automatically fill from barcode" disabled />
+    </div>
+
+    <div class="form-group">
+        <label for="exampleSelect1">Assay to complete</label>
+        <select class="form-control" id="exampleSelect1"  disabled>
+            <option></option>
+            <option>Assay 1</option>
+            <option>Assay 2</option>
+            <option>Assay 3</option>
+            <option>Assay 4</option>
+            <option>Assay 5</option>
+            <option>Assay 6</option>
+            <option>Assay 7</option>
+        </select>
+    </div>
+<h3>Confirmation:</h3>
+ <label for="exampleSelect1">Appearance:</label>
+    <br />
+    <div class="form-check">
+        <label class="form-check-label">
+            <input type="checkbox" class="form-check-input">
+            Yes
+        </label>
+        <br />
+        <label class="form-check-label">
+            <input type="checkbox" class="form-check-input">
+            No
+        </label>
+    </div>
+    <div class="form-group">
+        <textarea class="form-control" id="notesTextarea" rows="1" placeholder="If no, enter actual appearance here"></textarea>
+    </div>
+<label for="exampleSelect1">Weight:</label>
+    <br />
+    <div class="form-check">
+        <label class="form-check-label">
+            <input type="checkbox" class="form-check-input">
+            Yes
+        </label>
+        <br />
+        <label class="form-check-label">
+            <input type="checkbox" class="form-check-input">
+            No
+        </label>
+    </div>
+    <textarea class="form-control" id="notesTextarea" rows="1" placeholder="If no, enter actual weight here"></textarea>
+
+    <br />
+<div class="form-group">
+    <label for="customerID" data-toggle="tooltip" title="Maximum Tolerated Dose (">MTD: </label>
+    <text class="form-control"></text>
+</div>
+
+    <div class="form-group">
+        <label for="exampleTextarea">Additional Notes</label>
+        <textarea class="form-control" id="notesTextarea" rows="3"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Send Confirmation</button>
+</form>
