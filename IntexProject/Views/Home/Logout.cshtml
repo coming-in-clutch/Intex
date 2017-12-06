@@ -1,10 +1,17 @@
 ﻿
 @{
     ViewBag.Title = "Logout";
+    if (Session["userName"] == null)
+    {
+
+        Response.Redirect("~/Home/Login");
+
+    }
+
 }
 
 <h2>Logout</h2>
-
+    <br /><br />
 <p>
     @Html.ActionLink("Logout", "LogoutConfirmed", "Home", new { @class = "btn btn-primary btn-large" })
 
