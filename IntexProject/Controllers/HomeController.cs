@@ -130,6 +130,7 @@ namespace IntexProject.Controllers
             return View(fullCatalog);
         }
 
+        [Authorize]
         [HttpGet]
         public ActionResult WorkOrder()
         {
@@ -208,6 +209,11 @@ namespace IntexProject.Controllers
             }
 
             return View(newcustomer);
+        }
+
+        public ActionResult EmployeeWorkOrder()
+        {
+            return View();
         }
 
 
