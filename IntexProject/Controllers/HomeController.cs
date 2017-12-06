@@ -47,7 +47,7 @@ namespace IntexProject.Controllers
             if (string.Equals(userName, "customer") && (string.Equals(password, "intex")))
             {
                 FormsAuthentication.SetAuthCookie(userName, rememberMe);
-                Session["userName"] = "Customer";
+                Session["userName"] = "Bird Enterprise";
 
                 return RedirectToAction("Orders", "Home");
 
