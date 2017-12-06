@@ -164,6 +164,12 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\about.jpg" />
     <Content Include="Content\Images\background.png" />
+    <Content Include="Content\Images\home1.jpg" />
+    <Content Include="Content\Images\home2.jpg" />
+    <Content Include="Content\Images\home3.jpg" />
+    <Content Include="Content\Images\home4.jpg" />
+    <Content Include="Content\Images\home5.jpg" />
+    <Content Include="Content\Images\home6.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
