@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using IntexProject.Models;
+using System.ComponentModel;
 
 namespace IntexProject.Controllers
 {
@@ -163,6 +164,27 @@ namespace IntexProject.Controllers
                 "FROM Work_Order; ");
             return View(orders);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult NewCustomer([Bind(Include = "customerID,custAddress,custPhone,custCity,custState,custZip,custEmail")] NewCustomer newcustomer)
+        {
+            if (ModelState.IsValid)
+            {
+                db.NewCustomers.Add(newcustomer);
+
+                //commites new workOrder to database
+                db.SaveChanges();
+
+
+                return RedirectToAction("Confirmation");
+
+            }
+
+            return View(newcustomer);
+        }
+
+
     }
 
 }

@@ -34,16 +34,22 @@
                         <li>@Html.ActionLink("Logout", "Logout", "Home")</li>
                     }
                     else if (Session["userName"].ToString() == "Employee")
-                    {
+                    {   
+                        
                         <li>@Html.ActionLink("Employee", "Employee", "Home")</li>
+                        <ul>
+                            <!--Dropdown-->
+                                <!--Add Customer to Database-->
+                            <li>@Html.ActionLink("Add Customer", "NewCustomer", "Home")</li>
+                        </ul>
                         <li>@Html.ActionLink("Logout", "Logout", "Home")</li>
-                    }
-                    else if (Session["userName"].ToString() == "Customer")
-                    {
-                        <li>@Html.ActionLink("Orders", "Orders", "Home")</li>
-                        <li>@Html.ActionLink("Logout", "Logout", "Home")</li>
-                    }
-                </ul>
+                            }
+                            else if (Session["userName"].ToString() == "Customer")
+                            {
+                            <li>@Html.ActionLink("Orders", "Orders", "Home")</li>
+                            <li>@Html.ActionLink("Logout", "Logout", "Home")</li>
+                            }
+                        </ul>
             </div>
         </div>
     </div>
