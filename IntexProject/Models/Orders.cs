@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace IntexProject.Models
 {
@@ -17,7 +18,12 @@ namespace IntexProject.Models
         public DateTime dateArrived { get; set; }
         [DisplayName("Date Due")]
         public DateTime dateDue{ get; set; }
-        [DisplayName("Appearance")]
-        public String apperance { get; set; }
+
+        [HiddenInput(DisplayValue = false)]
+        public String statusID { get; set; }
+
+        [DisplayName("Status")]
+        public String statusDescription { get; set; }
+
     }
 }
