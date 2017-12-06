@@ -1,9 +1,51 @@
-﻿
+﻿@model IEnumerable<IntexProject.Models.Orders>
+
 @{
     ViewBag.Title = "Orders";
 }
 
-<h2>Your Orders</h2>
+<h2>Orders</h2>
 
+<p>
+    @Html.ActionLink("New Work Order", "WorkOrder", "Home", new { @class = "btn btn-primary btn-md" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.numberSamples)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dateArrived)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dateDue)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.apperance)
+        </th>
+        <th></th>
+    </tr>
 
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.numberSamples)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dateArrived)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dateDue)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.apperance)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.workOrderID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.workOrderID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.workOrderID })
+        </td>
+    </tr>
+}
 
+</table>

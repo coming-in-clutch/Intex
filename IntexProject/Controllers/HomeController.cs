@@ -48,7 +48,7 @@ namespace IntexProject.Controllers
                 FormsAuthentication.SetAuthCookie(userName, rememberMe);
                 Session["userName"] = "Customer";
 
-                return RedirectToAction("Customer", "Home");
+                return RedirectToAction("Orders", "Home");
 
             }
             else if (string.Equals(userName, "employee") && (string.Equals(password, "intex")))
@@ -155,7 +155,13 @@ namespace IntexProject.Controllers
         [Authorize]
         public ActionResult Orders()
         {
-            return View();
+            IEnumerable<Orders> orders = db.Database.SqlQuery<Orders>("SELECT workOrderID, " +
+                "numberSamples, " +
+                "dateArrived, " +
+                "dateDue, " +
+                "apperance " +
+                "FROM Work_Order; ");
+            return View(orders);
         }
     }
 
