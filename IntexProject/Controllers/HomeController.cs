@@ -145,8 +145,8 @@ namespace IntexProject.Controllers
             {
                 db.WorkOrders.Add(workOrder);
 
-                //commites new workOrder to database
-                db.SaveChanges();
+                ////commites new workOrder to database
+                //db.SaveChanges();
 
 
                 return RedirectToAction("Confirmation");
