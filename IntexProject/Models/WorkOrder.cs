@@ -12,7 +12,7 @@ namespace IntexProject.Models
     {
         [Key]
         [HiddenInput(DisplayValue = false)]
-        public int assayID { get; set; }
+        public int workOrderID { get; set; }
 
         [DisplayName("Assay Name")]
         public String assayName { get; set; }
@@ -27,6 +27,7 @@ namespace IntexProject.Models
         //public String weight(mg) { get; set; }
 
         [DisplayName("Due date of compound")]
+        //[RegularExpression("^\d{1,2}\/\d{1,2}\/\d{4}$", ErrorMessage = "Please follow the date format")]
         public String dateDue { get; set; }
 
 

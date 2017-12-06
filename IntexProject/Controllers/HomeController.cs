@@ -110,9 +110,29 @@ namespace IntexProject.Controllers
             return View(catalog);
         }
 
+        [HttpGet]
         public ActionResult WorkOrder()
         {
             return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult WorkOrder([Bind(Include = "workOrderID,assayName,numberSamples,apperance,dateDue")] WorkOrder workOrder)
+        {
+            if (ModelState.IsValid)
+            {
+                db.WorkOrders.Add(workOrder);
+
+                //commites new workOrder to database
+                db.SaveChanges();
+
+
+                return RedirectToAction("Confirmation");
+
+            }
+
+            return View(workOrder);
         }
 
         [Authorize]
@@ -123,6 +143,11 @@ namespace IntexProject.Controllers
 
         [Authorize]
         public ActionResult Employee()
+        {
+            return View();
+        }
+
+        public ActionResult Confirmation()
         {
             return View();
         }

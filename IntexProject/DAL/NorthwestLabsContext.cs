@@ -16,7 +16,8 @@ namespace IntexProject.DAL
         }
 
         public DbSet<Catalog> Catalogs { get; set; }
-   
+
+        public System.Data.Entity.DbSet<IntexProject.Models.WorkOrder> WorkOrders { get; set; }
     }
 
 }
