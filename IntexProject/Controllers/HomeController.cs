@@ -166,6 +166,12 @@ namespace IntexProject.Controllers
             return View(orders);
         }
 
+        [HttpGet]
+        public ActionResult NewCustomer()
+        {
+            return View();
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult NewCustomer([Bind(Include = "customerID,custAddress,custPhone,custCity,custState,custZip,custEmail")] NewCustomer newcustomer)
