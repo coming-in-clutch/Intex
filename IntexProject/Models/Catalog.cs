@@ -21,6 +21,10 @@ namespace IntexProject.Models
         [DisplayName("Number of Tests")]
         public int TestNum { get; set; }
 
+        [DisplayName("Price")]
+        public decimal assayBasePrice { get; set; }
+    
+
         //[DisplayName("Test Name")]
         //public String testName { get; set; }
 

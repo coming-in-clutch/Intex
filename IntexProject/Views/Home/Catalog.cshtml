@@ -5,21 +5,26 @@
 }
 
 
-<ol class="breadcrumb">
+@*<ol class="breadcrumb">
     <li class="breadcrumb-item">@Html.ActionLink("Home", "Index")</li>
     <li class="breadcrumb-item active">Catalog</li>
-</ol>
+</ol>*@
 
-<h2>Catalog</h2>
+<h2>Detailed Catalog</h2>
 
+<div class="row">
+    <div class="col-sm-8">
+        <br />
+        @Html.ActionLink("New Work Order", "WorkOrder", "Home", new { @class = "btn btn-primary btn-sm" })
+
+    </div>
+    <div class="col-sm-4">
+        <br />
+        @Html.ActionLink("Back to catalog", "CatalogDescription", "Home")
+
+    </div>
+</div>
 <br />
-<br />
-@Html.ActionLink("New Work Order", "WorkOrder", "Home", new { @class = "btn btn-primary btn-sm" })
-
-
-<br />
-<br />
-
     <div class="panel-group">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -29,10 +34,11 @@
             </div>
             <div id="collapse1" class="panel-collapse collapse">
                                 <ul class="list-group">
-                                    <li class="list-group-item">Biochemical Pharmacology (BP)</li>
-                                    <li class="list-group-item">DiscoveryScreen® (DS)</li>
-                                    <li class="list-group-item">ProfilingScreen® (PF)</li>
-                                </ul>
+                                    
+                                        <li class="list-group-item">Biochemical Pharmacology (BP) - <i>Protocol information here</i></li>
+                                        <li class="list-group-item">DiscoveryScreen® (DS)- <i>Protocol information here</i></li>
+                                        <li class="list-group-item">ProfilingScreen® (PF)- <i>Protocol information here</i></li>
+                                    </ul>
 
            </div>
             <div class="panel panel-default">
@@ -43,10 +49,10 @@
                 </div>
                 <div id="collapse2" class="panel-collapse collapse">
                     <ul class="list-group">
-                        <li class="list-group-item">Biochemical Pharmacology (BP)</li>
-                        <li class="list-group-item">DiscoveryScreen® (DS)</li>
-                        <li class="list-group-item">ImmunoScreen® (IS)</li>
-                        <li class="list-group-item">ProfilingScreen® (PF)</li>
+                        <li class="list-group-item">Biochemical Pharmacology (BP)- <i>Protocol information here</i></li>
+                        <li class="list-group-item">DiscoveryScreen® (DS)- <i>Protocol information here</i></li>
+                        <li class="list-group-item">ImmunoScreen® (IS)- <i>Protocol information here</i></li>
+                        <li class="list-group-item">ProfilingScreen® (PF)- <i>Protocol information here</i></li>
                     </ul>
 
                 </div>
@@ -54,6 +60,7 @@
             </div>
             </div>
     </div>
+
 
 
 

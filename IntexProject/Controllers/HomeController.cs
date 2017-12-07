@@ -120,12 +120,13 @@ namespace IntexProject.Controllers
             //    "ORDER BY ASSAY.assayID, assayName ");
             //return View(catalog);
             IEnumerable<Catalog> fullCatalog = db.Database.SqlQuery<Catalog>("SELECT  Assay.assayID," +
-                "assayName, " +
+                "assayName," +
+                "assayBasePrice, " +
                 "Count(test.testName) AS 'TestNum'" +
                 "FROM Assay " +
                 "   INNER JOIN Assay_Test ON Assay_Test.assayID = Assay.assayID " +
                 "   INNER JOIN Test ON Test.testID = Assay_Test.testID " +
-                "GROUP BY Assay.assayID, assayName " +
+                "GROUP BY Assay.assayID, assayName, assayBasePrice " +
                 "ORDER BY ASSAY.assayID, assayName ");
             return View(fullCatalog);
         }
